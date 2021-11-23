@@ -29,6 +29,7 @@ const initializeDbAndServer = async () => {
 
 initializeDbAndServer();
 
+// utility functions for converting  Db Respons to objects
 const convertPlayerDbObjectToResponseObject = (dbObject) => {
   return {
     playerId: dbObject.player_id,
@@ -43,6 +44,8 @@ const convertMatchDetailsDbObjectToResponseObject = (dbObject) => {
     year: dbObject.year,
   };
 };
+
+// API Strat ....
 
 app.get("/players/", async (request, response) => {
   const getPlayerQuery = `
